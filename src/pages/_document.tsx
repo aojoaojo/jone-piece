@@ -17,6 +17,7 @@ export default function Document() {
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
+        <link rel="icon" href="/jone-piece.webp"/>
       </Head>
       <body className="antialiased">
         <Main />

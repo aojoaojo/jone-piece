@@ -8,7 +8,7 @@ export default function PdfViewer() {
 
   useEffect(() => {
     if (id) {
-      const url = `/assets/caps/${id}.pdf`;
+      const url = `/caps/${id}.pdf`;
       setPdfUrl(url);
     }
   }, [id]);
@@ -17,16 +17,18 @@ export default function PdfViewer() {
 
   return (
     <div style={{ width: '100%', height: '100vh' }}>
-      <object
-        data={pdfUrl}
-        type="application/pdf"
-        width="100%"
-        height="100%"
+      <iframe
+        src={pdfUrl}
+        style={{
+          width: '100%',
+          height: 'calc(100vh - 20px)',
+          maxHeight: '100%',
+        }}
       >
-        <p>
-          Não foi possível carregar o PDF.{' '}
+        <p style={{ textAlign: 'center', padding: '10px' }}>
+          Não foi possível carregar o PDF.
         </p>
-      </object>
+      </iframe>
     </div>
   );
 }
